@@ -1,15 +1,15 @@
-# Madrid-Real-Estate-Price-Prediction
+# Real-Estate-Price-Prediction (in madrid)
 This is a supervised learning model which predicts the price of Real Estate in Madrid, Spain.
 
 Data collected from [Kaggle.](https://www.kaggle.com/datasets/mirbektoktogaraev/madrid-real-estate-market)
 
-The dataset consist listings from popular real estate portals of Madrid. I first cleaned the data in excel and then imported it to R.
-
+The dataset consist listings from popular real estate portals of Madrid.
+First the data is  cleaned and transformed in excel and then imported  to R.
 
 After looking through the data its easy to see that there are 145 unique areas in the data-set.
-Then i added a sq_ft coloumn in the data and a buy_price_per_sq_ft coloumn to get an idea of the buy price. Because the buy_price can depend on a lot of factors and thus will be varied but buy_price_per_sq_ft gives a glimpse into the variability of the data.
+"sq_ft coloumn" and "buy_price_per_sq_ft" variables are added in the data  to get an idea of the buying price price. This is because  the buy_price can depend on a lot of factors and thus will be varied but buy_price_per_sq_ft gives a glimpse into the variability of the data.
 
-Now, since i am interested in the buy price, i plotted buy_price_per_sq_ft with the number of data points to check if our data is normal or not.
+Now, since i am interested in the buying  price, i plotted buy_price_per_sq_ft with the number of data points to check if our data is normal or not.
 
 ![Price Per Sq Ft](https://user-images.githubusercontent.com/97380339/164281667-55990fe7-5e8c-4cef-8eb7-6e1b65f17bb8.png)
 
@@ -32,33 +32,25 @@ Plotted a histogram for the dependent variable.
 
 And a paired scatter plot of the independent variables to see correlation.
 
-![indep_scatterplot](https://user-images.githubusercontent.com/97380339/165938568-fb1239a7-c70a-4e70-834c-d6ce82570bd2.png)
+![indepth_scatterplot](https://user-images.githubusercontent.com/97380339/165938568-fb1239a7-c70a-4e70-834c-d6ce82570bd2.png)
 
 
-Then we divide the data into Test and Train & use the Train data to train our model.
-When the quantile regression is done we do the AIC check to make sure our model is not over-fitted and then we get our final model.
+Then the data was divided into into Test  and Train & use the Train data to train our model.
+ AIC values were obtained  to make sure the trained  model is not over-fitted .
 
 ![Final Model](https://user-images.githubusercontent.com/97380339/165948702-d5a4dc95-6315-4947-ae53-19a918fb40a2.png)
 
 
-Now we use our model to predict the Test set values and check the accuracy of it.
-We do so by plotting a gain curve.
+The trained was used  to  predict the Test set values and check the accuracy of it.
+A gain curve was plotted.
 
 
 ![Gain Curve](https://user-images.githubusercontent.com/97380339/165949292-8ea0e93e-d4b7-48a5-8039-2de972a91f4c.png)
 
 
-A relative Gini score close to 1 means the model sorts responses well.
-And since our relative Gini score is 0.94 we can say that our model predicts well and thus is a good fit.
-
-Now we try to make a web page in R Shiny, which can be used to predict the price of the property in madrid (in Euro) through our model.
-
-This is how our webpage looks.
-
-![Web Page](https://user-images.githubusercontent.com/97380339/165949920-4b7fce04-acec-4304-986a-0ccdad616c06.png)
+A relative Gain score close to 1 means the model sorts responses well.
+And since the relative Gini score is 0.94 it was concluded that the  model predicts well and thus is a good fit.
 
 
-You can also use the following link.
 
-[Price Prediction of Madrid Real Esate](http://127.0.0.1:7054/)
 
